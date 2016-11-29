@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Contains dddsvq_tickets.module..
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function dddsvq_tickets_theme($existing, $type, $theme, $path) {
+  $themes = [];
+
+  $themes['buy_ticket'] = [];
+
+  return $themes;
+}
