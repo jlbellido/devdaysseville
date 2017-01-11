@@ -45,6 +45,11 @@
  */
 #}
 <div class="layout-container">
+  <a href="#" class="menu-trigger" id="menuButtonTrigger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
 
   <nav role="navigation" class="sliding_menu">
     {% if page.sliding_menu %}
@@ -54,17 +59,6 @@
   {% if page.top_bar %}
     {{ page.top_bar }}
   {% endif %}
-
-  <header role="banner" aria-label="{{ 'Site header'|t}}">
-    {% if page.secondary_menu %}
-      {{ page.secondary_menu }}
-    {% endif %}
-    <a href="#" class="menu-button-open" id="menuButtonOpen">
-    </a>
-      {{ page.header_left }}
-      {{ page.header }}
-      {{ page.header_right }}
-  </header>
 
   {% if page.highlighted %}
     {{ page.highlighted }}
@@ -86,8 +80,17 @@
     {{ page.help }}
   {% endif %}
 
-
-  <main role="main">
+  <header class="header" role="banner" aria-label="{{ 'Site header'|t }}">
+    {% if page.secondary_menu %}
+      {{ page.secondary_menu }}
+    {% endif %}
+    <a href="#" class="menu-button-open" id="menuButtonOpen">
+    </a>
+    {{ page.header_left }}
+    {{ page.header_right }}
+    {{ page.header }}
+  </header>
+  <main class="content" role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     <div class="layout-content">
@@ -102,12 +105,6 @@
         {{ page.sidebar_first }}
       </aside>
     {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
   </main>
 
   {% if page.footer %}
@@ -117,17 +114,17 @@
     </footer>
   {% endif %}
 
-    {% if page.footer_left %}
-      <footer role="complementary">
-          {{ page.footer_left }}
-      </footer>
-    {% endif %}
-
+  {% if page.footer_left %}
     <footer role="complementary">
-        {{ 'Drupal.org issue queue tag: DevDaysSeville' }}
-        {{ 'Social media hashtag: #drupaldevdays' }}
-        {{ page.footer_right }}
+      {{ page.footer_left }}
     </footer>
+  {% endif %}
+
+  <footer role="complementary">
+    {{ 'Drupal.org issue queue tag: DevDaysSeville' }}
+    {{ 'Social media hashtag: #drupaldevdays' }}
+    {{ page.footer_right }}
+  </footer>
 
 
   {% if page.footer_info %}
