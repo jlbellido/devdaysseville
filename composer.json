@@ -12,24 +12,24 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packagist.drupal-composer.org"
+            "url": "https://packages.drupal.org/8"
         }
     ],
     "require": {
         "composer/installers": "^1.0.20",
         "drupal-composer/drupal-scaffold": "^2.0.1",
         "cweagans/composer-patches": "~1.0",
-        "drupal/core": "~8.0",
+        "drupal/core": "*",
         "drush/drush": "~8.0",
         "drupal/console": "~1.0",
-        "drupal/metatag": "8.1.x-dev",
-        "drupal/captcha": "8.1.0-alpha1",
-        "drupal/linked_field": "8.1.x-dev",
-        "drupal/token": "~8.1",
-        "drupal/pathauto": "~8.1",
-        "drupal/block_visibility_groups": "~8.1",
-        "drupal/imagemagick": "~8.1",
-        "drupal/field_group": "~8.0"
+        "drupal/metatag": "1.x-dev",
+        "drupal/captcha": "1.0-alpha1",
+        "drupal/linked_field": "1.x-dev",
+        "drupal/token": "~1",
+        "drupal/pathauto": "~1",
+        "drupal/block_visibility_groups": "~1",
+        "drupal/imagemagick": "~1",
+        "drupal/field_group": "~1"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -67,12 +67,24 @@
     },
     "extra": {
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/contrib/{$name}": ["type:drupal-drush"]
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
         },
         "patches": {
             "drupal/core": {
